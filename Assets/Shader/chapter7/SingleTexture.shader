@@ -1,6 +1,6 @@
 ﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
 
-Shader "Unlit/chpater7/SingleTexture"
+Shader "Unlit/chapter7/SingleTexture"
 {
 	Properties
 	{
@@ -61,7 +61,7 @@ Shader "Unlit/chpater7/SingleTexture"
 				fixed3 worldLightDir = normalize(UnityWorldSpaceLightDir(i.worldPos));
 				
 				fixed3 albedo = tex2D(_MainTex, i.uv).xyz * _Color.rgb;
-				fixed ambient = UNITY_LIGHTMODEL_AMBIENT.xyz * albedo;
+				fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz * albedo;
 				fixed3 diffuse = _LightColor0.xyz * albedo * max(0, dot(worldNormal, worldLightDir));
 
 				fixed3 viewDir = normalize(UnityWorldSpaceViewDir(i.worldPos));
